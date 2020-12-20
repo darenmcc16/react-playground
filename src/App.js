@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Messages from './Messages';
+import HelloWorld from './state-drills/HelloWorld';
+import Counter from './state/Counter';
+import TheDate from './state/TheDate';
+import Bomb from './state-drills/Bomb';
+import RouletteGun from './state-drills/RouletteGun';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render(){
+    return(
+      <div className="App">
+        <h1>YOUR APPLICATION NAME!</h1>
+        <Messages name="Messages" unread={0} />
+        <Messages name="Notifications" unread={10} />
+        <TheDate  name="Date" />
+        <Counter name="Counter" count={123}/>
+        <HelloWorld name="Hello" />
+        <Bomb name="BombApp" />
+        <RouletteGun name="RouletteGun" />
+      </div>
+    );
+  }
 }
+
 
 export default App;
